@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Care</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+</head>
+<body>
+    <!-- HEADER: icon + title + tag line + log in svg -->
+    <header>
+        <div class="head">
+            <div id="logo_">
+                <img src="HEALTHY CARE.png" width="160" height="130" id="logo"/> </a>
+            </div>
+ 
+             <div id="healthy"> <!--title and tag line -->
+                 <h1 id="title_main"> Healthy Care </h1>
+                 <p id="tag_line"> CARE made EASY for YOU </p>
+             </div>   
+
+             <div><a href="login.html" id="login">  <!--log in page's link-->  <img src="icons8-log-in-64.png" width="80" height="60"/>   </a> </div>
+        </div>
+    </header>
+    <!-- NAVIGATION BAR  -->
+    <div class="nav" > 
+        <ul>
+            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#">SYMPTOMS</a></li>
+            <li> <a href="#">ARTICLES</a>
+                <span class="submenu1">
+                    <ul>
+                        <li><a href="#">KIDS</a></li>
+                        <li><a href="#">TEENS</a></li>
+                        <li><a href="#">SENIOR</a></li>
+                    </ul>   
+                </span>
+            </li>
+            <li><a href="#">HABITS</a>
+                <span class="submenu2">
+                    <ul>
+                        <li><a href="#">MAKE NEW</a></li>
+                        <li><a href="#">GIVE UP</a></li>
+                        <li><a href="#">IMPROVE</a></li>
+                    </ul>   
+                </span>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="quote">   <!-- DISPLAY RANDOM QUOTE -->
+        <p id="ran">  </p>
+    </div>
+    <!-- <div>   quotation mark -->
+         <img src="quotation.png" width="130" height="130" id="mark">    </div>
+
+    <!-- CALCULATORS: BMI; WATER INTAKE; CALORIE -->
+    <section id="main">
+        <div class="row">
+            <div class="column">
+                <div class="card" id="bmi_card">
+                    <div id="adjust"> <h1 class="cards" id="BMI_tital"> CALCULATOR-  <br> BOBY  MASS  INDEX  </h1> </div>
+                    <input type="text" id="cm" placeholder="Height (in centimeter)"> </span>
+                    <input type="text" id="kg" placeholder="Weight (in kilogram)"> </span>
+                    <div> <input type="submit" id="submit1" value="Calculate"> </div>
+                    <span id="answer">
+                        <strong><h7> GUIDE <br> under-weight < 18.6 <br> over-weight > 24.9 <br> else, U R fit n fine</h7></strong>
+                    </span>
+                    <span id="result"></span> 
+                </div>
+                <script>
+                document.getElementById("submit1").addEventListener("click", Calcu1);
+                function Calcu1(){
+                    var cm = parseInt(document.getElementById("cm").value);
+                    var kg = parseInt(document.getElementById("kg").value);
+                    var ans;
+                    var info = "your BMI is";
+                    var in_cm= parseFloat(cm/100);
+                    ans = kg / (in_cm * in_cm);
+                    ans = ans.toFixed(2);
+                    document.getElementById("answer").innerHTML = info;
+                    document.getElementById("result").innerHTML = ans;
+                }
+                </script>
+            </div>
+            <div class="column">
+                <div class="card" id="h20_card">
+                    <h1 class="cards" id="h20"> Calculate your water intake </h1>
+                    <input type="text" id="kg_h2o" placeholder="Weight (in kg)"> </span>
+                    <div> <input type="submit" id="submit2" value="Calculate"> </div>
+                </div>
+                <span id="hydrate">answer</span> 
+                <p id="gif">
+                    <img src="glass.gif" width="160" height="170">
+                <!-- <iframe src="https://giphy.com/embed/KgdjfsAqun5HjYQCSE" width="160" height="570" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                </p> -->
+                <script>   //Water (litres)drink/day = Weight (Kg) multiplied by 0.033.
+                document.getElementById("submit2").addEventListener("click", Calcu2);
+                function Calcu2(){
+                    var weight = parseInt(document.getElementById("kg_h2o").value);
+                    var answers;
+                    answers = weight * 0.033;
+                    answers = answers.toFixed(1);
+                    document.getElementById("hydrate").innerHTML = answers;
+                }
+                </script>
+            </div>
+            <div class="column">
+                <div class="card" id="calorie_card">
+                    <h1 class="cards" id="CALORIE"> Calorie count </h1>
+                    <img src="foodies.gif" width="250" height="250">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

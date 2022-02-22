@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+<body>
+    <section>
+        <div class="color"> </div>
+        <div class="box">
+            <div class="container">
+                <div class="form">
+                    <h2 id="say"> REGISTER </h2>
+                    <form>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Full Name">  
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" placeholder="User name">  
+                        </div>
+                        <div class="inputradio"  id="gender">
+                            Gender:     <br>                      
+                            <input type="radio" id="rad1" value="Other" name="one"> Prefer not to respond
+                            <input type="radio" id="rad2" value="Female" name="one"> Female                           
+                            <input type="radio" id="rad3" value="Male" name="one"> Male                
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="datepicker" placeholder="DateofBirth" class="datepicker">
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" placeholder="Password">  
+                        </div>
+                        <div class="inputBox" >
+                            <input type="submit">  
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
